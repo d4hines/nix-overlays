@@ -39,6 +39,10 @@ let
     ocamlPackages = oself;
   };
 
+  jsonDataEncodingPackages = callPackage ./tezos/json-data-encoding.nix {
+    ocamlPackages = oself;
+  };
+
   lambda-runtime-packages = callPackage ./lambda-runtime {
     ocamlPackages = oself;
   };
@@ -87,6 +91,7 @@ graphqlPackages //
 glutenPackages //
 h2Packages //
 janestreetPackages //
+jsonDataEncodingPackages //
 junitPackages //
 lambda-runtime-packages //
 menhirPackages //
@@ -169,6 +174,8 @@ websocketafPackages // {
   });
 
   cudf = callPackage ./cudf { ocamlPackages = oself; };
+
+  data-encoding = callPackage ./tezos/data-encoding.nix { ocamlPackages = oself; };
 
   decimal = callPackage ./decimal { ocamlPackages = oself; };
 
@@ -487,4 +494,5 @@ websocketafPackages // {
     (o: {
       buildInputs = o.buildInputs ++ [ dune-configurator ];
     });
+
 }
