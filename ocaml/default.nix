@@ -432,6 +432,8 @@ websocketafPackages // {
 
   routes = callPackage ./routes { ocamlPackages = oself; };
 
+  secp256k1-internal = callPackage ./tezos/secp256k1-internal.nix { ocamlPackages = oself; };
+
   sedlex_3 = osuper.sedlex_2.overrideAttrs (_: {
     src = builtins.fetchurl {
       url = https://github.com/ocaml-community/sedlex/archive/v2.3.tar.gz;
