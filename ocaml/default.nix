@@ -78,6 +78,10 @@ let
     ocamlPackages = oself;
   };
 
+  restoPackages = callPackage ./resto {
+    ocamlPackages = oself;
+  };
+
   sessionPackages = callPackage ./session {
     ocamlPackages = oself;
   };
@@ -105,6 +109,7 @@ multicorePackages //
 oidcPackages //
 reasonPackages //
 redisPackages //
+restoPackages //
 sessionPackages //
 websocketafPackages // {
   alcotest = osuper.alcotest.overrideAttrs (_: {
