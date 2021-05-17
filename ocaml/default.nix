@@ -47,6 +47,10 @@ let
     ocamlPackages = oself;
   };
 
+  lwtUtilPackages = callPackage ./tezos/lwt-utils.nix {
+    ocamlPackages = oself;
+  };
+
   menhirPackages =
     if !lib.versionAtLeast osuper.ocaml.version "4.07"
     then { }
@@ -94,6 +98,7 @@ janestreetPackages //
 jsonDataEncodingPackages //
 junitPackages //
 lambda-runtime-packages //
+lwtUtilPackages //
 menhirPackages //
 morphPackages //
 multicorePackages //
