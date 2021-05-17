@@ -31,6 +31,10 @@ let
     ocamlVersion = osuper.ocaml.version;
   };
 
+  haclStarPackages = callPackage ./tezos/hacl-star.nix {
+    ocamlPackages = oself;
+  };
+
   janestreetPackages = callPackage ./janestreet {
     ocamlPackages = oself;
   };
@@ -100,8 +104,8 @@ archiPackages //
 cookiePackages //
 dataloader-packages //
 graphqlPackages //
-glutenPackages //
 h2Packages //
+haclStarPackages //
 janestreetPackages //
 jsonDataEncodingPackages //
 junitPackages //
