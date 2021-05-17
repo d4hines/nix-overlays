@@ -418,6 +418,8 @@ websocketafPackages // {
 
   reenv = callPackage ./reenv { ocamlPackages = oself; };
 
+  ringo = callPackage ./tezos/ringo.nix { ocamlPackages = oself; };
+
   rosetta = callPackage ./rosetta { ocamlPackages = oself; };
 
   routes = callPackage ./routes { ocamlPackages = oself; };
