@@ -384,6 +384,8 @@ websocketafPackages // {
 
   ocplib-endian = callPackage ./ocplib-endian { ocamlPackages = oself; };
 
+  odoc = callPackage ./odoc { ocamlPackages = oself; };
+
   parmap = osuper.parmap.overrideAttrs (o: {
     buildInputs = o.buildInputs ++ [ dune-configurator ];
   });
