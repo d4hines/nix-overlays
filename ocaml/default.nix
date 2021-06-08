@@ -382,6 +382,8 @@ websocketafPackages // {
     propagatedBuildInputs = [ stdlib-shims ];
   };
 
+  ocaml-migrate-types = callPackage ./ocaml-migrate-types { ocamlPackages = oself; };
+
   ocplib-endian = callPackage ./ocplib-endian { ocamlPackages = oself; };
 
   odoc = callPackage ./odoc { ocamlPackages = oself; };
@@ -423,6 +425,8 @@ websocketafPackages // {
   };
 
   ppx_jsx_embed = callPackage ./ppx_jsx_embed { ocamlPackages = oself; };
+
+  ppx_let_locs = callPackage ./ppx_let_locs { ocamlPackages = oself; };
 
   ppx_rapper = callPackage ./ppx_rapper { ocamlPackages = oself; };
   ppx_rapper_async = callPackage ./ppx_rapper/async.nix { ocamlPackages = oself; };
