@@ -542,10 +542,7 @@ websocketafPackages // {
   yojson = callPackage ./yojson { ocamlPackages = oself; };
   yuscii = callPackage ./yuscii { ocamlPackages = oself; };
 
-  zarith = osuper.zarith.overrideAttrs
-    (o: {
-      version = "1.11";
-    });
+  zarith = callPackage ./zarith { ocamlPackages = oself; };
 
   zmq = osuper.zmq.overrideAttrs
     (o: {
