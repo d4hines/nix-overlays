@@ -167,6 +167,8 @@ websocketafPackages // {
     };
   });
 
+  bisect_ppx = callPackage ./bisect_ppx { ocamlPackages = oself; };
+
   calendar = callPackage ./calendar { ocamlPackages = oself; };
 
   camlbz2 = callPackage ./camlbz2 { ocamlPackages = oself; };
